@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>List of all tasks</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 </head>
 <body>
@@ -45,6 +45,24 @@
 			</c:forEach>
 		</tbody>
 	</table>
+
+	<br>
+	<jsp:useBean id="dateNow" class="java.util.Date" />
+	<%--<jsp:useBean id="concluida" class="java.lang.String" value="Concluída"/> --%>
+	<c:set var="concluida" value="Concluída" />
+	<jsp:useBean id="concluida" type="java.lang.String" />
+
+	<c:out value="Tarefas Atrasadas:" />
+	<br>
+
+	<c:forEach items="${tasks}" var="task">
+		<c:if
+			test="{$(task.dataConclusao le dateNow)}">
+			<%--test="{$(task.dataConclusao le dateNow) and (not ${task.status}.equalsIgnoreCase(concluida))}">--%>
+				${task.id} : ${task.dataConclusao} : ${task.status}<br>
+		</c:if>
+	</c:forEach>
+
 	<p>
 		<a href="TaskController.do?action=create">Criar tarefa</a>
 	</p>
