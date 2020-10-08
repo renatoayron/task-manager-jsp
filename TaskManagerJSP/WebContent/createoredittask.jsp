@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Editor de tarefas</title>
+<title>Editor de Tarefas</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <script type="text/javascript">
 	function comparaData(data) {
@@ -32,6 +32,7 @@
 <body>
 	<div align=center class=container>
 		<div class=center>
+			<a href="index.jsp">Home</a><br>
 			<h1>Registro de Tarefas</h1>
 			<form action='TaskController.do' action='DatePicker' method='post'>
 				<table>
@@ -74,11 +75,11 @@
 					</tr>--%>
 					<%--<label for="datepicker">Data de Conclusão:</label>
                 	<input type="text" name="dataConclusao" id="datepicker"> --%>
-					<tr>
+					<tr class="">
 						<td><label for='date'>Data de Conclusão:</label></td>
 						<td><input type="date" name="dataConclusao"
 							value="${task.dataConclusao}" /></td>
-						<td><errors path="task.dataConclusao" /></td>
+						<%--<td><errors path="task.dataConclusao" /></td>--%>
 					</tr>
 					<tr>
 						<td></td>
