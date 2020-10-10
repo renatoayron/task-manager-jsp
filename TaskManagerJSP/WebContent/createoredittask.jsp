@@ -11,7 +11,8 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
-	<a href="index.jsp">Home</a><br>
+	<a href="index.jsp">Home</a>
+	<br>
 	<div align=center class="container">
 		<div class="center">
 			<h1>Registro de Tarefas</h1>
@@ -38,11 +39,12 @@
 						<div class="input-field col s12">
 							<tr>
 								<td>Status:</td>
-								<td><select class="browser-default" type='text' name='status' value="${task.status}">
+								<td><select class="browser-default" type='text'
+									name='status' value="${task.status}">
 										<option value="" selected disabled>Escolha o status</option>
-										<option value="1">Planejada</option>
-										<option value="2">Em Andamento</option>
-										<option value="3">Concluída</option>
+										<option value="Planejada">Planejada</option>
+										<option value="Em Andamento">Em Andamento</option>
+										<option value="Concluída">Concluída</option>
 								</select></td>
 							</tr>
 						</div>
@@ -51,12 +53,14 @@
 							<td><input type='text' name='atribPara'
 								value="${task.atribPara}" /></td>
 						</tr>
+						<div class="input-field col s12">
 						<tr>
 							<td>Data de Conclusão:</td>
-							<td><input type="date" name="dataConclusao"
-								value="${task.dataConclusao}" /></td>
+							<td><input type="date" class="datepicker"
+								name="dataConclusao" value="${task.dataConclusao}" /></td>
 							<td><errors path="task.dataConclusao" /></td>
 						</tr>
+						</div>
 						<tr>
 							<td></td>
 							<td><input type='hidden' name='dateCreated'
@@ -78,13 +82,21 @@
 	<!-- Compiled and minified JavaScript -->
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+		
 	</script>
 
 	<script>
 		$(document).ready(function() {
+
+			//SElECT
 			$('select').formSelect();
+
+			//DATEPICKER			
+			//$('.datepicker').datepicker();
+
+			$('.datepicker').pickadate({selectMonths : true, selectYears : 15});
+
 		});
 	</script>
-
 </body>
 </html>
