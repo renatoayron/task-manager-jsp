@@ -11,9 +11,9 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
+	<a href="index.jsp">Home</a><br>
 	<div align=center class="container">
-		<div class=center>
-			<a href="index.jsp">Home</a><br>
+		<div class="center">
 			<h1>Registro de Tarefas</h1>
 			<form action='TaskController.do' action='DatePicker' method='post'>
 				<div class="row">
